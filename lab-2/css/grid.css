@@ -142,6 +142,90 @@ footer {
   padding: 10px;
 }
 
+/* Hamburger menu */
+.nav-toggle {
+  display: none;
+}
+
+.nav-buttons {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* hamburger */
+.nav-toggle-label {
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  color: white;
+}
+
+/* krzyżyk */
+.nav-close-label {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #0077b6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 100;
+  }
+
+  .nav-links a {
+    padding: 15px 20px;
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* przyciski hamburger/krzyżyk */
+  .nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 1000px;
+  }
+
+  /* pokaż krzyżyk i ukryj hamburger */
+  .nav-toggle:checked ~ .nav-buttons .nav-close-label {
+    display: block;
+  }
+  .nav-toggle:checked ~ .nav-buttons .nav-toggle-label {
+    display: none;
+  }
+
+  /* przyciski zawsze z prawej */
+  .nav-buttons {
+    position: relative;
+    justify-content: flex-end;
+    padding: 10px 15px;
+  }
+
+  /* desktop menu ukrywamy na mobilnym */
+  .nav-links.desktop {
+    display: none;
+  }
+}
+
 /* ===== UKŁAD SZEROKI — od 1024px ===== */
 @media (min-width: 1024px) {
   .container {

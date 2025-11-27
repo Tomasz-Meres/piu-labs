@@ -1,0 +1,199 @@
+:root {
+  --card-bg: #f0f0f0;
+  --card-radius: 16px;
+  --text-color: #222;
+  --price-color: #000;
+
+  /* Kolory produktu */
+  --color-blue: #153cbd;
+  --color-red: #e32020;
+  --color-green: #108830;
+  --color-yellow: #fdb524;
+
+  --accent-color: var(--color-blue);
+
+  /* Zdjęcie sterowane zmienną */
+  --product-image: url('../img/polo_b.png');
+}
+
+.card:has(input[type='radio'][name='color'][value='red']:checked) {
+  --product-image: url('../img/polo_r.png');
+  --accent-color: var(--color-red);
+}
+
+.card:has(input[type='radio'][name='color'][value='green']:checked) {
+  --product-image: url('../img/polo_g.png');
+  --accent-color: var(--color-green);
+}
+
+.card:has(input[type='radio'][name='color'][value='yellow']:checked) {
+  --product-image: url('../img/polo_y.png');
+  --accent-color: var(--color-yellow);
+}
+
+body {
+  background: white;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 20px;
+  width: min(100%, calc(500px + 300px + 40px));
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: min(500px, 100%);
+  aspect-ratio: 1 / 1;
+  background-image: var(--product-image);
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--accent-color);
+}
+
+.details {
+  width: min(300px, 100%);
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  background: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.section {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.section h3 {
+  margin: 0;
+  margin-bottom: 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.color-option input {
+  display: none;
+}
+
+.colors {
+  display: flex;
+  gap: 10px;
+  margin: 10px auto;
+  justify-content: center;
+}
+
+.color {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.color-option input:checked + .color {
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px black;
+  width: 19px;
+  height: 19px;
+  padding: 2px;
+}
+
+.size-option input {
+  display: none;
+}
+
+.blue {
+  background: var(--color-blue);
+}
+.red {
+  background: var(--color-red);
+}
+.green {
+  background: var(--color-green);
+}
+.yellow {
+  background: var(--color-yellow);
+}
+
+.size-option input:checked + .size {
+  background: var(--accent-color);
+  color: white;
+  border: 2px solid black;
+}
+
+.sizes {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+.size {
+  padding: 6px 14px;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.price {
+  margin-top: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  color: var(--price-color);
+}
+
+.btn {
+  margin: 20px auto;
+  width: 55%;
+  height: 60px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}

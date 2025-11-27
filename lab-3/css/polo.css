@@ -61,7 +61,26 @@ body {
   background-position: center;
   border-radius: 12px;
   overflow: hidden;
+  background-size: 100%;
   border: 2px solid var(--accent-color);
+  transition: background-size 0.3s ease, transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:has(input[name='size'][value='S']:checked) .image {
+  background-size: 90%; /* zmniejszone zdjęcie */
+}
+
+.card:has(input[name='size'][value='M']:checked) .image {
+  background-size: 98%; /* normalny rozmiar */
+}
+
+.card:has(input[name='size'][value='L']:checked) .image {
+  background-size: 106%; /* powiększone zdjęcie */
+}
+
+.card:has(input[name='size'][value='XL']:checked) .image {
+  background-size: 114%; /* największe zdjęcie */
 }
 
 .details {
@@ -172,6 +191,17 @@ body {
   font-weight: bold;
 }
 
+.size-option input:checked + .size {
+  border: 2px solid black;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.size-option .size:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
 .price {
   margin-top: 14px;
   font-size: 24px;
@@ -196,4 +226,16 @@ body {
   gap: 8px;
   align-items: center;
   justify-content: center;
+}
+
+.btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: var(--accent-color);
+  font-weight: 700;
+}
+
+.btn:active {
+  transform: scale(0.95) translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

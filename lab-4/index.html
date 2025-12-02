@@ -6,7 +6,38 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <div class="board">
+      <div class="column" data-column="todo">
+        <h2>Do zrobienia (<span class="count">0</span>)</h2>
+        <div class="controls">
+          <button class="add-card-btn">Dodaj kartę</button>
+          <button class="color-column-btn">Koloruj kolumnę</button>
+          <button class="sort-column-btn">Sortuj</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+
+      <div class="column" data-column="inprogress">
+        <h2>W trakcie (<span class="count">0</span>)</h2>
+        <div class="controls">
+          <button class="add-card-btn">Dodaj kartę</button>
+          <button class="color-column-btn">Koloruj kolumnę</button>
+          <button class="sort-column-btn">Sortuj</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+
+      <div class="column" data-column="done">
+        <h2>Zrobione (<span class="count">0</span>)</h2>
+        <div class="controls">
+          <button class="add-card-btn">Dodaj kartę</button>
+          <button class="color-column-btn">Koloruj kolumnę</button>
+          <button class="sort-column-btn">Sortuj</button>
+        </div>
+        <div class="cards"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

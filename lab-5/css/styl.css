@@ -1,0 +1,128 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 25px;
+  text-align: center;
+  background: linear-gradient(135deg, #f2fff5 0%, #e6ffee 100%);
+  color: #1a3d1f;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: 900;
+  color: #1f4a25;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+
+  background: #3cbf4c;
+  font-weight: 600;
+
+  box-shadow: 0 4px 14px rgba(60, 191, 76, 0.35);
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(60, 191, 76, 0.45);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(60, 191, 76, 0.3);
+}
+
+.counters {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.counter-box {
+  background: #ffffffcc;
+  padding: 18px 22px;
+  border-radius: 16px;
+  min-width: 150px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.counter-box:hover {
+  transform: translateY(-4px);
+}
+
+.counter-box .label {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.counter-box .value {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 5px;
+  transition: transform 0.3s ease;
+}
+
+.square-counter {
+  border-top: 5px solid #66d47f;
+}
+
+.circle-counter {
+  border-top: 5px solid #89e6a0;
+}
+
+.value.bump {
+  transform: scale(1.15);
+}
+
+#board {
+  margin: 20px auto;
+  width: min(900px, 90%);
+  min-height: 240px;
+  border-radius: 18px;
+  border: 3px dashed #a6d7b7;
+  background: #ffffffbb;
+  padding: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.shape {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.shape:hover {
+  transform: scale(1.1);
+}
+
+.square {
+  background: #4cc96b;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(76, 201, 107, 0.35);
+}
+
+.circle {
+  background: #7ee6a4;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(126, 230, 164, 0.35);
+}
